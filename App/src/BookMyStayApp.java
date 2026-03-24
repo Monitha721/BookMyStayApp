@@ -1,5 +1,6 @@
-void main() {
-    for (int i = 1; i <= 5; i++) {
-        IO.println("i = " + i);
+public class BookMyStayApp {
+    public static void main(String[] args){
+        System.out.println("Welcome to the Hotel Booking Management System");
+        System.out.println("System initialized successfully.");
     }
 }
