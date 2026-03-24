@@ -1,10 +1,6 @@
-import java.util.Map;
-
-public class BookMyStayApp {
+public class UseCase4RoomSearch {
 
     public static void main(String[] args) {
-
-        System.out.println("Hotel Room Inventory Status\n");
 
         Room singleRoom = new SingleRoom();
         Room doubleRoom = new DoubleRoom();
@@ -12,18 +8,13 @@ public class BookMyStayApp {
 
         RoomInventory inventory = new RoomInventory();
 
-        Map<String, Integer> availability = inventory.getRoomAvailability();
+        RoomSearchService searchService = new RoomSearchService();
 
-        System.out.println("Single Room:");
-        singleRoom.displayRoomDetails();
-        System.out.println("Available Rooms: " + availability.get("Single Room"));
-
-        System.out.println("\nDouble Room:");
-        doubleRoom.displayRoomDetails();
-        System.out.println("Available Rooms: " + availability.get("Double Room"));
-
-        System.out.println("\nSuite Room:");
-        suiteRoom.displayRoomDetails();
-        System.out.println("Available Rooms: " + availability.get("Suite Room"));
+        searchService.searchAvailableRooms(
+                inventory,
+                singleRoom,
+                doubleRoom,
+                suiteRoom
+        );
     }
 }
